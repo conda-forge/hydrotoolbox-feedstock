@@ -26,8 +26,16 @@ requirements:
   run:
     - python >=3.8
     - cltoolbox >=1.0.0
-    - toolbox_utils >=5.0.0,<6.0.0
     - pydantic
+    - dateparser
+    - numpy
+    - pandas
+    - pint !=0.21
+    - pint <0.22  # [py<3.9]
+    - pint-pandas
+    - pydantic
+    - scipy
+    - tabulate
 
 test:
   imports:
