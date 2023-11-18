@@ -31,7 +31,6 @@ requirements:
     - numpy
     - pandas
     - pint !=0.21
-    - pint <0.22  # [py<3.9]
     - pint-pandas
     - pydantic
     - scipy
