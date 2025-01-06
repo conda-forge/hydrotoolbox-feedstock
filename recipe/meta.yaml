@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hydrotoolbox-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hydrotoolbox-{{ version }}.tar.gz
   sha256: 05d2abb6e6ee412d73c3248ae08e58a9db7d26790a123404be911ce9f4f9a3a7
 
 build:
@@ -14,21 +14,22 @@ build:
     - hydrotoolbox = hydrotoolbox.hydrotoolbox:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools-scm >=6.2
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - cltoolbox >=1.0.0
     - pydantic
     - dateparser
-    - numpy
+    - numpy >=1.20
+    - numpy <2.0
     - pandas
     - pint !=0.21
     - pint-pandas
@@ -44,6 +45,7 @@ test:
     - hydrotoolbox --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Command line script and Python library for analysis of flow time-series.
