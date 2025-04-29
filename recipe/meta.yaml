@@ -1,5 +1,5 @@
 {% set name = "hydrotoolbox" %}
-{% set version = "2.0.11" %}
+{% set version = "2.0.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hydrotoolbox-{{ version }}.tar.gz
-  sha256: 05d2abb6e6ee412d73c3248ae08e58a9db7d26790a123404be911ce9f4f9a3a7
+  sha256: ab2451073aef05d761ef70681d2d7b2072a946e6d9b0624ee18ba69e2d20e299
 
 build:
   entry_points:
     - hydrotoolbox = hydrotoolbox.hydrotoolbox:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
