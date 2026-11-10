@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: hydrotoolbox
-  version: "2.3.2"
+  version: "2.4.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 7d4a8cd8ae6c959e889d30d5984dcfb4982f3d0ff685513b9f16d45705d6e45a
+  sha256: d064985ba26ab6e27a727980c3c64b3d4f1c8ffa8d4e89777e2f0bb30a70a2e1
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps
   python:
