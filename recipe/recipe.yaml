@@ -37,7 +37,7 @@ requirements:
     - pandas
     - pint !=0.21
     - pint-pandas
-    - pydantic >2.0
+    - pydantic >=2.0
     - python-calamine >=0.3.0
     - pyxlsb >=1.0.10
     - scipy
